@@ -1,0 +1,19 @@
+ubunto  github  ssh  配置说明
+
+安装好git后
+
+第一步：配置gitusername 和 email
+	git config --global user.name "13644185447"
+	git config --global user.email  "13644185447@163.com"
+	
+第二步：看是否存在 id_rsa 和 id_rsa.pub文件，如果存在，说明已经有SSH Key
+	cd ~/.ssh
+	ls
+第三步：如果没有SSH Key，则需要先生成一下
+	ssh-keygen -t rsa -C "13644185447@163.com"（生成过程中三次输入  第一次是名称 后两次是密码  可以都不设置 连续按三次空格）
+
+第四步：生成后拷贝出.pub内容  在github上添加
+
+第五步：ssh -T git@github.com
+	运行结果出现代表成功
+	Hi xiangshuo1992! You've successfully authenticated, but GitHub does not provide shell access.
